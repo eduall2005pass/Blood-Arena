@@ -2,7 +2,7 @@
 
 **Blood Arena** is a blood donation management portal built for **SHSMC** (Sylhet Government High School & Model College). It connects blood donors with people in need of emergency blood transfusions, with a fully bilingual interface (Bangla & English).
 
-🌐 **Live Site:** [bloodarena-shsmc.infinityfree.me](https://bloodarena-shsmc.infinityfree.me)
+🌐 **Live Site:** [bloodarenabd.app](https://bloodarenabd.app)
 
 ---
 
@@ -93,10 +93,9 @@ Upload all files to your web server's public root directory.
 
 ## 👨‍💻 Contributors
 
-| Name   | Role           |
-|--------|----------------|
-| Rafi   | Developer      |
-| Siam   | Co-developer   |
+| Name            | Role      |
+|-----------------|-----------|
+| Siam-258 (Sh-20) | Developer |
 
 ---
 
