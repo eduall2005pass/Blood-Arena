@@ -24,16 +24,21 @@
 
 ```
 Blood-Arena/
-├── index.php          # Main portal (donor search, registration, emergency requests, PWA manifest)
-├── admin.php          # Secure admin dashboard (donor management, call logs, bulk actions)
-├── admin_setup.php    # One-time admin password setup (delete after use)
-├── admin_config.php   # Hashed admin credentials (auto-generated, do NOT expose)
-├── db.php             # MySQL database connection
-├── sw.js              # Service Worker for PWA / offline caching
-├── icon.png           # App icon
-├── logo.png / logo1.png
+├── index.php               # Main portal (donor search, registration, emergency requests, PWA manifest)
+├── db.php                  # MySQL database connection
+├── sw.js                   # Service Worker for PWA / offline caching
 ├── sitemap.xml
-└── robots.txt
+├── robots.txt
+├── admin/
+│   ├── admin.php           # Secure admin dashboard (donor management, call logs, bulk actions)
+│   ├── admin_setup.php     # One-time admin password setup (delete after use)
+│   └── admin_config.php    # Hashed admin credentials (auto-generated, do NOT expose)
+└── assets/
+    ├── icon.png            # App icon
+    ├── logo.png
+    ├── logo1.png
+    ├── rafi.jpg
+    └── siam.jpg
 ```
 
 ---
@@ -70,9 +75,9 @@ $dbname     = "your_db_name";
 ```
 
 ### 3. Admin Setup
-1. Open `admin_setup.php` in your browser.
+1. Open `admin/admin_setup.php` in your browser.
 2. Set a strong admin password (min 10 chars, uppercase, number, special character).
-3. **Delete `admin_setup.php` immediately after setup** to prevent unauthorized access.
+3. **Delete `admin/admin_setup.php` immediately after setup** to prevent unauthorized access.
 
 ### 4. Deploy
 Upload all files to your web server's public root directory.
@@ -81,13 +86,13 @@ Upload all files to your web server's public root directory.
 
 ## 🔐 Security Notes
 
-- `db.php` and `admin_config.php` contain sensitive credentials — **never expose them publicly**.
+- `db.php` and `admin/admin_config.php` contain sensitive credentials — **never expose them publicly**.
 - The admin panel includes:
   - Rate-limited login (max 5 attempts, 15-minute lockout)
   - Session idle & hard timeout
   - IP whitelist support
   - CSRF protection and security headers
-- `admin_setup.php` must be **deleted** after initial setup.
+- `admin/admin_setup.php` must be **deleted** after initial setup.
 
 ---
 
