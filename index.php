@@ -18,14 +18,14 @@ if (isset($_GET['manifest'])) {
         "categories"              => ["health","medical"],
         "prefer_related_applications" => false,
         "icons" => [
-            ["src"=>"/icon.png","sizes"=>"192x192","type"=>"image/png","purpose"=>"any"],
-            ["src"=>"/icon.png","sizes"=>"192x192","type"=>"image/png","purpose"=>"maskable"],
-            ["src"=>"/icon.png","sizes"=>"512x512","type"=>"image/png","purpose"=>"any"],
-            ["src"=>"/icon.png","sizes"=>"512x512","type"=>"image/png","purpose"=>"maskable"]
+            ["src"=>"/assets/icon.png","sizes"=>"192x192","type"=>"image/png","purpose"=>"any"],
+            ["src"=>"/assets/icon.png","sizes"=>"192x192","type"=>"image/png","purpose"=>"maskable"],
+            ["src"=>"/assets/icon.png","sizes"=>"512x512","type"=>"image/png","purpose"=>"any"],
+            ["src"=>"/assets/icon.png","sizes"=>"512x512","type"=>"image/png","purpose"=>"maskable"]
         ],
         "shortcuts" => [
-            ["name"=>"রক্তদাতা খুঁজুন","short_name"=>"Donors","url"=>"/?tab=donors","icons"=>[["src"=>"/icon.png","sizes"=>"192x192"]]],
-            ["name"=>"Emergency Request","short_name"=>"Emergency","url"=>"/?tab=emergency","icons"=>[["src"=>"/icon.png","sizes"=>"192x192"]]]
+            ["name"=>"রক্তদাতা খুঁজুন","short_name"=>"Donors","url"=>"/?tab=donors","icons"=>[["src"=>"/assets/icon.png","sizes"=>"192x192"]]],
+            ["name"=>"Emergency Request","short_name"=>"Emergency","url"=>"/?tab=emergency","icons"=>[["src"=>"/assets/icon.png","sizes"=>"192x192"]]]
         ]
     ], JSON_UNESCAPED_UNICODE);
     exit;
@@ -1788,8 +1788,8 @@ if(isset($_POST['mark_admin_msg_read'])){
 <html lang="en">  
 <head>  
 <meta charset="UTF-8">
-<link rel="preload" as="image" href="logo.png">
-<link rel="preload" as="image" href="logo1.png">
+<link rel="preload" as="image" href="assets/logo.png">
+<link rel="preload" as="image" href="assets/logo1.png">
  
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <link rel="manifest" href="/?manifest=1">
@@ -1799,17 +1799,17 @@ if(isset($_POST['mark_admin_msg_read'])){
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Blood Arena">
-<link rel="apple-touch-icon" sizes="192x192" href="icon.png">
-<link rel="apple-touch-icon" href="icon.png">
+<link rel="apple-touch-icon" sizes="192x192" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/icon.png">
 <meta name="application-name" content="Blood Arena">
 <meta name="msapplication-TileColor" content="#dc2626">
-<meta name="msapplication-TileImage" content="icon.png">
+<meta name="msapplication-TileImage" content="assets/icon.png">
 <title>Blood Arena</title>
 <meta name="description" content="Blood Arena - শহীদ সোহরাওয়ার্দী মেডিকেল কলেজের একটি অনলাইন রক্তদান প্ল্যাটফর্ম। জরুরি প্রয়োজনে রক্তদাতা খুঁজে পেতে বা রক্তদাতা হিসেবে নাম লেখাতে আজই ভিজিট করুন।">
 <meta name="keywords" content="Blood donation, SHSMC, Blood donor, সুহরাওয়ার্দী মেডিকেল কলেজ, রক্তদান, Blood Aren, Siam, Rafi">
 <meta property="og:title" content="Blood Arena | সুহরাওয়ার্দী মেডিকেল কলেজ রক্তদান কেন্দ্র">
 <meta property="og:description" content="রক্তের জন্য আর নয় অস্থিরতা। আমাদের অনলাইন ডাটাবেজে যুক্ত হোন।">
-<meta property="og:image" content="https://bloodarena-shsmc.infinityfree.me/logo.png">
+<meta property="og:image" content="https://bloodarena-shsmc.infinityfree.me/assets/logo.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1817,7 +1817,7 @@ if(isset($_POST['mark_admin_msg_read'])){
   "name": "Blood Arena",
   "description": "Shaheed Suhrawardy Medical College Campus Blood Donation Portal",
   "url": "https://bloodarena-shsmc.infinityfree.me/",
-  "logo": "https://bloodarena-shsmc.infinityfree.me/logo.png",
+  "logo": "https://bloodarena-shsmc.infinityfree.me/assets/logo.png",
   "parentOrganization": {
     "@type": "MedicalOrganization",
     "name": "Shaheed Suhrawardy Medical College"
@@ -1837,7 +1837,7 @@ if(isset($_POST['mark_admin_msg_read'])){
     }
 </script>
 
-<link rel="icon" type="image/png" href="icon.png"> 
+<link rel="icon" type="image/png" href="assets/icon.png"> 
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
@@ -4722,7 +4722,7 @@ html { scroll-padding-top: 92px; }
 
 <!-- ══ PWA SPLASH SCREEN ══ -->
 <div id="pwaSplash">
-    <img src="icon.png" alt="Blood Arena" class="splash-logo" onerror="this.style.display='none'">
+    <img src="assets/icon.png" alt="Blood Arena" class="splash-logo" onerror="this.style.display='none'">
     <div class="splash-name">Blood <span>Solution</span></div>
     <div class="splash-tagline">SHSMC · রক্তদান পোর্টাল</div>
     <div class="splash-spinner" id="splashGear"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -4874,14 +4874,14 @@ html { scroll-padding-top: 92px; }
 </div>
 
 <header>
-  <img src="logo.png" alt="Left Logo" loading="eager" decoding="sync" fetchpriority="high">
+  <img src="assets/logo.png" alt="Left Logo" loading="eager" decoding="sync" fetchpriority="high">
   <h1>Blood Arena</h1>
   <div class="notif-bell-wrap" id="nBellWrap">
     <button class="notif-bell" id="nBell" onclick="toggleNPanel()" title="Live Requests">
       🔔<span class="notif-badge" id="nBadge"></span>
     </button>
   </div>
-  <img src="logo1.png" alt="Right Logo" loading="eager" decoding="sync" fetchpriority="high">
+  <img src="assets/logo1.png" alt="Right Logo" loading="eager" decoding="sync" fetchpriority="high">
 </header>
 <!-- Notif panel rendered at body level to escape header stacking context -->
 <div class="notif-panel-anchor">
@@ -5172,7 +5172,7 @@ html { scroll-padding-top: 92px; }
         <!-- Siam Card -->
         <div class="dev-card dev-card-siam">
             <div class="dev-card-bar" style="background:linear-gradient(90deg,var(--primary-red),#f59e0b);"></div>
-            <img src="siam.jpg" alt="Siam" class="dev-avatar" style="border-color:var(--primary-red);">
+            <img src="assets/siam.jpg" alt="Siam" class="dev-avatar" style="border-color:var(--primary-red);">
             <p class="dev-name">Siam-258</p>
             <p class="dev-role">Sh-20 · Lead Dev</p>
             <span class="dev-badge dev-badge-red" style="margin-bottom:5px;">💻 Lead Developer</span>
@@ -5183,7 +5183,7 @@ html { scroll-padding-top: 92px; }
         <!-- Rafi Card -->
         <div class="dev-card dev-card-si">
             <div class="dev-card-bar" style="background:linear-gradient(90deg,#10b981,#3b82f6,#6366f1);"></div>
-            <img src="rafi.jpg" alt="Rafi" class="dev-avatar" style="border-color:#10b981;">
+            <img src="assets/rafi.jpg" alt="Rafi" class="dev-avatar" style="border-color:#10b981;">
             <p class="dev-name">Rafi-293</p>
             <p class="dev-role">Sh-20 · Planner</p>
             <span class="dev-badge dev-badge-green">🩸 Planner of Blood Arena</span>
@@ -5730,7 +5730,7 @@ html { scroll-padding-top: 92px; }
       <!-- Android / Chrome: compact single row -->
       <div id="pwaAndroidContent">
         <div class="pwa-top-row">
-          <img src="icon.png" alt="Blood Arena" class="pwa-app-icon">
+          <img src="assets/icon.png" alt="Blood Arena" class="pwa-app-icon">
           <div class="pwa-install-titles">
             <strong>Blood Arena</strong>
             <span>Home Screen-এ Add করুন</span>
@@ -5751,7 +5751,7 @@ html { scroll-padding-top: 92px; }
       <!-- iOS Safari: step instructions -->
       <div id="pwaIOSContent" style="display:none;">
         <div class="pwa-top-row">
-          <img src="icon.png" alt="Blood Arena" class="pwa-app-icon">
+          <img src="assets/icon.png" alt="Blood Arena" class="pwa-app-icon">
           <div class="pwa-install-titles">
             <strong>Home Screen-এ Add করুন</strong>
             <span>Blood Arena · iOS Safari</span>
@@ -10600,7 +10600,7 @@ function settingsInstallApp() {
         if (andEl) {
             andEl.innerHTML =
                 '<div class="pwa-top-row">'
-              + '  <img src="icon.png" alt="Blood Arena" class="pwa-app-icon">'
+              + '  <img src="assets/icon.png" alt="Blood Arena" class="pwa-app-icon">'
               + '  <div class="pwa-install-titles"><strong>Blood Arena</strong><span>Home Screen-এ Add করুন</span></div>'
               + '  <div class="pwa-top-btns">'
               + '    <button class="pwa-install-btn" onclick="pwaDoInstall()">📲 Install</button>'

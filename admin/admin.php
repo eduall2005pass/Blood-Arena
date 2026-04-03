@@ -44,8 +44,8 @@ session_start();
 $conn=null; $db_error='';
 try {
     mysqli_report(MYSQLI_REPORT_OFF);
-    if(file_exists(__DIR__.'/db.php')){
-        include_once __DIR__.'/db.php';
+    if(file_exists(__DIR__.'/../db.php')){
+        include_once __DIR__.'/../db.php';
         if(isset($conn)&&$conn instanceof mysqli){ $conn->set_charset("utf8mb4"); }
         else { $db_error='DB connection failed.'; $conn=null; }
     } else { $db_error='db.php not found.'; }
@@ -59,9 +59,9 @@ function ensureConn(&$conn, &$db_error){
     if($conn instanceof mysqli){ if(@$conn->ping()) return true; $conn=null; }
     try {
         mysqli_report(MYSQLI_REPORT_OFF);
-        if(file_exists(__DIR__.'/db.php')){
+        if(file_exists(__DIR__.'/../db.php')){
             $tmp=null;
-            (function() use (&$tmp){ global $conn; include __DIR__.'/db.php'; $tmp=$conn; })();
+            (function() use (&$tmp){ global $conn; include __DIR__.'/../db.php'; $tmp=$conn; })();
             if($tmp instanceof mysqli){ $tmp->set_charset("utf8mb4"); $conn=$tmp; return true; }
         }
     } catch(Throwable $e){}
@@ -3654,7 +3654,7 @@ function _showAdminNotif(title, body, url) {
     if (Notification.permission !== 'granted') return;
     var opts = {
         body: body,
-        icon: '/icon.png',
+        icon: '/assets/icon.png',
         badge: '/?badge_icon=1',
         tag: 'admin-' + Date.now(),
         renotify: true,
