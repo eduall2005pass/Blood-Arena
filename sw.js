@@ -51,11 +51,14 @@ self.addEventListener('fetch', function(event) {
         event.respondWith(
             caches.match(req).then(function(cached) {
                 return cached || fetch(req).then(function(response) {
-                    if (response && response.status === 200 && response.type !== 'opaque') {
+                    if (response && response.type === 'basic' && response.status === 200) {
                         var clone = response.clone();
                         caches.open(CACHE_NAME).then(function(cache) { cache.put(req, clone); });
                     }
                     return response;
+                }).catch(function() {
+                    // Network failed and no cache — return empty 503 to avoid unhandled rejection
+                    return new Response('Offline', { status: 503, statusText: 'Service Unavailable' });
                 });
             })
         );
@@ -94,7 +97,7 @@ self.addEventListener('push', function(event) {
     }
     var title   = data.title || '🩸 Blood Arena';
     var options = {
-        body:             data.body    || 'নতুন Emergency Blood Request!',
+        body:             data.body    || 'নতুন emergency blood request!',
         icon:             data.icon    || '/?badge_icon=1',
         badge:            data.badge   || '/?badge_icon=1',
         tag:              data.tag     || 'blood-arena-push',
@@ -113,7 +116,7 @@ self.addEventListener('notificationclick', function(event) {
         self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(function(clients) {
             for (var i = 0; i < clients.length; i++) {
                 var c = clients[i];
-                if (c.url.indexOf(self.location.origin) === 0 && 'focus' in c) {
+                if (c.url.startsWith(self.location.origin) && 'focus' in c) {
                     return c.focus();
                 }
             }
